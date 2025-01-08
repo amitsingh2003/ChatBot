@@ -21,9 +21,10 @@ ROBOTAKSH is a modern, interactive AI assistant with a sleek cyberpunk-inspired 
 ## 🚀 Quick Start
 
 1. Clone the repository.
-2. run node server.js
-3. Open `index.html` in your browser
-4. Start chatting with ROBOTAKSH!
+2. npm i 
+3. run node server.js
+4. Open `index.html` in your browser
+5. Start chatting with ROBOTAKSH!
 
 ## 🛠️ Commands
 
