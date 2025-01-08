@@ -966,46 +966,7 @@
         }
       }
 
-      async function processMessage(message) {
-        if (isProcessing) {
-          return;
-        }
-
-        isProcessing = true;
-        let response;
-
-        try {
-          // Handle commands
-          if (message.startsWith("/clear")) {
-            chatbox.innerHTML = "";
-            response = "Chat history cleared!";
-            isCodeMode = false; // Reset code mode when clearing
-          } else if (message.startsWith("/help")) {
-            response = `Available commands:
-      /help - Show this help message
-      /clear - Clear chat history
-      /code - Format next message as code`;
-          } else if (message.startsWith("/code")) {
-            isCodeMode = true;
-            response =
-              "Code formatting enabled. Your next message will be formatted as code.";
-          } else {
-            // If code mode is enabled, format the message as code
-            if (isCodeMode) {
-              addMessage("```\n" + message + "\n```", true);
-              isCodeMode = false; // Reset code mode after using it
-            } else {
-              addMessage(message, true);
-            }
-            response = await sendToBackend(message);
-          }
-
-          speak(response);
-          addMessage(response, false);
-        } finally {
-          isProcessing = false;
-        }
-      }
+      
 
       // Enhance the addMessage function to better handle code formatting
       function addMessage(message, isUser) {
